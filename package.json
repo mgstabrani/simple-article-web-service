@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mgstabrani/simple-article-web-service#readme",
   "dependencies": {
     "@hapi/hapi": "^20.2.0",
+    "dotenv": "^10.0.0",
     "hapi-mongodb": "^10.0.1"
   },
   "devDependencies": {
