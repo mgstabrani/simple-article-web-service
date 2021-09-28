@@ -1,0 +1,27 @@
+{
+  "name": "simple-article-web-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgstabrani/simple-article-web-service.git"
+  },
+  "author": "Mgs. Tabrani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mgstabrani/simple-article-web-service/issues"
+  },
+  "homepage": "https://github.com/mgstabrani/simple-article-web-service#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.0",
+    "hapi-mongodb": "^10.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
