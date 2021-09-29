@@ -1,6 +1,21 @@
 async function getArticles(request, h){
-    const articles = await request.mongo.db.collection('articles').find().toArray();
+    const { name, query } = request.query;
 
+    await request.mongo.db.collection('articles').createIndex({
+        title: 'text',
+        body:'text',
+    });
+
+    let filterBy = {};
+
+    if(name) filterBy.author = name;
+
+    if(query) filterBy.$text = {$search: `\"${query}\"`};
+
+    const articles = await request.mongo.db.collection('articles').find(filterBy).sort({
+        created:-1    
+    }).toArray();
+    
     const response = h.response({
         status: 'success',
         data: {
