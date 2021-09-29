@@ -1,3 +1,5 @@
+const { customAlphabet } = require('nanoid');
+
 async function getArticles(request, h){
     const { name, query } = request.query;
 
@@ -30,6 +32,9 @@ async function getArticles(request, h){
 
 async function saveArticle(request, h){
     const payload = request.payload;
+    const nanoid = customAlphabet('0123456789',16);
+    payload._id = parseInt(nanoid());
+    payload.created = Date.now();
 
     const status = await request.mongo.db.collection('articles').insertOne(payload);
 
